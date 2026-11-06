@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+app:
+  job:
+    max-retries: 2
+    retry-base-delay-ms: 100
+    worker-pool-size: 2
+    job-lock-ttl-ms: 5000
+    poll-interval-ms: 200
